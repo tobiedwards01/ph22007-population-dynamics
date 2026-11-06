@@ -1,0 +1,94 @@
+Compare: run time ratio RK4/Euler (100 d, h=0.01): 4.1 (RK4 uses 4 function evaluations per step, Euler 1)
+Q1.1 Euler: rabbit peaks first -> last: 123.1 -> 154.8 (8 peaks)
+Q1.1 Euler: fox peaks first -> last: 33.2 -> 41.3
+Q1.1 Euler: max rabbits / max foxes: 154.8 / 41.3
+Q1.2a max |own RK4 - scipy DOP853| (populations): 1.03e-05
+Q1.2b fixed points: (0, 0) saddle and (25, 10) centre
+Q1.2b rabbit nullclines (dx/dt=0): x = 0 and y = alpha/beta = 10
+Q1.2b fox nullclines (dy/dt=0): y = 0 and x = gamma/delta = 25
+Q1.2b small-oscillation period 2pi/sqrt(alpha*gamma): 8.886 days
+Q1.2c period T (RK4): 11.4858 days (mean of 8 cycles, spread 1.5e-05 days)
+Q1.2c state at t=T (should equal start (100, 20)): (99.998, 20.000)
+Q1.2 rabbit peak times (first 3): 11.09, 22.58, 34.07
+Q1.2 fox peak times (first 3): 0.74, 12.23, 23.71
+Q1.2 fox lag behind rabbit peak: 1.13 days = 0.099 T (small-oscillation limit: T/4)
+Compare: V0: -1.298317
+Compare: relative drift in V after 100 d (Euler, RK4), h=0.01: 4.78e-01, 7.04e-09
+Compare: fitted convergence order euler: 0.96
+Compare: abs error at t=20 d, euler, h=0.1: 1.84e+01
+Compare: abs error at t=20 d, euler, h=0.05: 1.43e+01
+Compare: abs error at t=20 d, euler, h=0.02: 7.35e+00
+Compare: abs error at t=20 d, euler, h=0.01: 3.96e+00
+Compare: abs error at t=20 d, euler, h=0.005: 2.05e+00
+Compare: abs error at t=20 d, euler, h=0.002: 8.36e-01
+Compare: abs error at t=20 d, euler, h=0.001: 4.21e-01
+Compare: fitted convergence order rk4: 4.07
+Compare: abs error at t=20 d, rk4, h=0.1: 1.50e-03
+Compare: abs error at t=20 d, rk4, h=0.05: 8.28e-05
+Compare: abs error at t=20 d, rk4, h=0.02: 1.95e-06
+Compare: abs error at t=20 d, rk4, h=0.01: 1.19e-07
+Compare: abs error at t=20 d, rk4, h=0.005: 7.31e-09
+Compare: abs error at t=20 d, rk4, h=0.002: 1.83e-10
+Compare: abs error at t=20 d, rk4, h=0.001: 9.49e-12
+Compare: equal cost (4000 evaluations) error Euler / RK4: 2.05e+00 / 1.95e-06 (ratio 1.0e+06)
+Q2.1 time when H = Z: 0.5608 days
+Q2.1 logistic (analytic) estimate of H = Z time: 0.5549 days
+Q2.1 population at H = Z: 499.8 each
+Q2.1 final (H, Z, D) at t = 5 d: (0.000, 994.4, 10.58)
+Q2.1 final D vs analytic H0*delta/gamma: 10.58 vs 10.53
+Q2.1 max deviation of H+Z+D from 1005 (alpha=0 => conserved): 5.7e-13
+Q2.2a gamma=0.001: H=Z time: 5.855 d
+Q2.2a gamma=0.001: final D vs H0*delta/gamma: 100.11 vs 100.00
+Q2.2a gamma=0.002: H=Z time: 2.774 d
+Q2.2a gamma=0.002: final D vs H0*delta/gamma: 50.22 vs 50.00
+Q2.2a gamma=0.005: H=Z time: 1.076 d
+Q2.2a gamma=0.005: final D vs H0*delta/gamma: 20.08 vs 20.00
+Q2.2a gamma=0.0095: H=Z time: 0.561 d
+Q2.2a gamma=0.0095: final D vs H0*delta/gamma: 10.57 vs 10.53
+Q2.2a gamma=0.02: H=Z time: 0.265 d
+Q2.2a gamma=0.02: final D vs H0*delta/gamma: 5.02 vs 5.00
+Q2.2a gamma=0.05: H=Z time: 0.106 d
+Q2.2a gamma=0.05: final D vs H0*delta/gamma: 2.01 vs 2.00
+Q2.2a spread of outbreak point in gamma*t: 10.51%
+Q2.2a spread of outbreak point in (gamma-delta)*t: 0.04%
+Q2.2c [Z>=H] fit t = A/gamma: A: 5.3899e-03 +/- 3.0e-05
+Q2.2c [Z>=H] logistic theory A = ln(k(N/Z0-1))/N: 5.2720e-03
+Q2.2c [Z>=H] residuals of A/gamma fit: -2.14% to 7.95% (positive at small gamma)
+Q2.2c [Z>=H] fit t = B*gamma^n: B, n: 4.9774e-03 +/- 5.2e-05, -1.0175 +/- 0.0022
+Q2.2c [Z>=H] fit t = A/(gamma - c): A, c: 5.2720e-03 +/- 1.5e-09, 9.964e-05 +/- 7.4e-10 (compare delta = 1e-4)
+Q2.2c [Z>=H] max |residual| of A/(gamma-c) fit: 0.0003%
+Q2.2c [Z>=H] outbreak time at gamma=1.000e-03: 5.8554 d
+Q2.2c [Z>=H] outbreak time at gamma=3.162e-03: 1.7214 d
+Q2.2c [Z>=H] outbreak time at gamma=1.000e-02: 0.5325 d
+Q2.2c [Z>=H] outbreak time at gamma=3.162e-02: 0.1672 d
+Q2.2c [Z>=H] outbreak time at gamma=1.000e-01: 0.0528 d
+Q2.2c [Z>=10H] fit t = A/gamma: A: 7.7326e-03 +/- 4.4e-05
+Q2.2c [Z>=10H] logistic theory A = ln(k(N/Z0-1))/N: 7.5631e-03
+Q2.2c [Z>=10H] residuals of A/gamma fit: -2.13% to 7.95% (positive at small gamma)
+Q2.2c [Z>=10H] fit t = B*gamma^n: B, n: 7.1407e-03 +/- 7.5e-05, -1.0175 +/- 0.0022
+Q2.2c [Z>=10H] fit t = A/(gamma - c): A, c: 7.5632e-03 +/- 4.8e-08, 9.968e-05 +/- 1.7e-08 (compare delta = 1e-4)
+Q2.2c [Z>=10H] max |residual| of A/(gamma-c) fit: 0.0091%
+Q2.2c [Z>=10H] outbreak time at gamma=1.000e-03: 8.4007 d
+Q2.2c [Z>=10H] outbreak time at gamma=3.162e-03: 2.4695 d
+Q2.2c [Z>=10H] outbreak time at gamma=1.000e-02: 0.7639 d
+Q2.2c [Z>=10H] outbreak time at gamma=3.162e-02: 0.2399 d
+Q2.2c [Z>=10H] outbreak time at gamma=1.000e-01: 0.0757 d
+Q2.2c max difference between Z>=H and Z>=10H residuals (A/gamma): 0.0087 percentage points
+Q3a zombie equilibria: every point with H = D = 0 is an equilibrium (a line); on the conserved plane H+Z+D=N the only one is (0, N, 0), which attracts all orbits
+Q3a start (505, 0, 500): no zombies initially, Z = H at: 2.27 d (outbreak seeded by resurrection)
+Q3b learning: delta_max: 0.03 day^-1 (gamma = 0.0095)
+Q3b learning: tau at which half of humans survive to t=10 d: 1.760 days
+Q3b learning: delta(t) passes gamma at t = c*tau, c: 0.377; for tau_half this is 0.66 d
+Q3b learning: humans left at 10 d, tau=0.5: 960
+Q3b learning: humans left at 10 d, tau=1: 871
+Q3b learning: humans left at 10 d, tau=1.5: 670
+Q3b learning: humans left at 10 d, tau=2: 320
+Q3b learning: humans left at 10 d, tau=3: 0
+Q3b seasonal P=2.5T: rabbit range over 200 d: 1.01e+00 to 120.3
+Q3b seasonal P=1T: rabbit range over 200 d: 2.05e-04 to 366.2
+Q3b seasonal: alpha(t): 1 + 0.3 sin(2 pi t / P), 200 days, h = 0.02
+Q3b seasonal: unforced lowest rabbits: 1.03
+Q3b seasonal: lowest rabbits for P/T in [0.3, 0.8): 2.7e-13 at P/T = 0.77
+Q3b seasonal: lowest rabbits for P/T in [0.8, 1.3): 1.2e-12 at P/T = 0.88
+Q3b seasonal: lowest rabbits for P/T in [1.3, 2.3): 3.1e-02 at P/T = 2.11
+Q3b seasonal: lowest rabbits for P/T in [2.3, 3.5): 3.0e-01 at P/T = 3.08

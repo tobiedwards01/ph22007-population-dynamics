@@ -1,0 +1,12 @@
+# Private notes (report handoff) - not for publishing
+notes.md
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
